@@ -41,7 +41,7 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: Publish to GitHub Packages
-        run: ./gradlew :tracker:publishReleasePublicationToGitHubPackagesRepository -Pversion=${{ github.event.inputs.version || github.event.client_payload.version }}
+        run: ./gradlew :tracker:assembleRelease :tracker:publishReleasePublicationToGitHubPackagesRepository -Pversion=${{ github.event.inputs.version || github.event.client_payload.version }}
         env:
           GITHUB_ACTOR: ${{ github.actor }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
