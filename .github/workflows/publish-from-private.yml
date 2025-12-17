@@ -44,4 +44,4 @@ jobs:
         run: ./gradlew :tracker:assembleRelease :tracker:publishReleasePublicationToGitHubPackagesRepository -Pversion=${{ github.event.inputs.version || github.event.client_payload.version }}
         env:
           GITHUB_ACTOR: ${{ github.actor }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PRIVATE_REPO_TOKEN }}
